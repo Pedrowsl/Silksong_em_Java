@@ -2,6 +2,8 @@ import javax.swing.JOptionPane;
 
 public class Jogo {
     public static void main(String[] args){
+        Heroina hornet = new Heroina("Hornet");
+
         System.out.println("=================================");
         System.out.println("    HOLLOW KNIGHT: SILKSONG");
         System.out.println("       edicao POO em Java");
@@ -9,5 +11,6 @@ public class Jogo {
         String nome = JOptionPane.showInputDialog("Insira seu nome: ");
         System.out.println("Carregando save de " + nome + "...");
 
+        System.out.println(hornet);
     }
 }
