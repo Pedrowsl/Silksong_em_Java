@@ -22,4 +22,30 @@ public class Heroina{
     public String toString(){
         return nome + " | Mascaras: " + mascaras+"/5 | Seda: " + seda+"/9";
     }
+    public void atacar(){
+        System.out.println(nome + " ataca com a agulha!");
+        seda = Math.min(SEDA_MAXIMO, seda+1);
+    }
+    public void atacar(int vezes){
+        for(int i=0; i<vezes; i++){
+            atacar();
+        }
+    }
+    public void receberDano(int dano){
+        System.out.println(nome + " recebeu " + dano + " de dano");
+        mascaras = Math.max(MASCARAS_MINIMO, mascaras - dano);
+    }
+    public void curar(){
+        if(seda==SEDA_MAXIMO){
+            mascaras = Math.min(mascaras+3, MASCARAS_MAXIMO);
+            seda=SEDA_MINIMO;
+            System.out.println(nome + " se amarrou com seda e recuperou mascaras.");
+        }
+        else{
+            System.out.println(nome + " não tem seda suficiente para se curar.");
+        }
+    }
+    public boolean estaDerrotada(){
+        return mascaras==MASCARAS_MINIMO;
+    }
 }
